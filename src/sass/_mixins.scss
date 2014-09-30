@@ -1,0 +1,15 @@
+
+@mixin menu_shadow($conf) {
+  -webkit-box-shadow: $conf;
+     -moz-box-shadow: $conf;
+      -ms-box-shadow: $conf;
+          box-shadow: $conf;
+}
+
+@mixin box_radius($conf) {
+	border-radius:$conf;
+}
+
+@mixin blend-mode($modo) {
+	blend-mode: $modo;
+}

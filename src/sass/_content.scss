@@ -1,0 +1,293 @@
+p { 
+  text-align: justify;
+  font-family: 'Raleway', sans-serif;
+  font-size: 13px;
+  padding: 0 0 7px 0;
+}
+
+h1,h2,h3,h4,h5,h6 { 
+  font-family: 'Indie Flower', cursive;
+  text-transform: uppercase;
+  text-align: center;
+  color: #000000;
+  margin: 10px 0;
+}
+h1 { font-size: 45px; }
+h2 { font-size: 40px; }
+h3 { font-size: 35px; }
+h4 { font-size: 30px; }
+h5 { font-size: 25px; }
+h6 { font-size: 20px; }
+
+a { 
+  color: #000000;
+  outline-style:none;
+  text-decoration:none;
+  &:hover { color: #000000; text-decoration: underline;} 
+} 
+
+.navbar-default { 
+  background-image: url(../img/layout/imgBgMenu.png);
+  //-webkit-blend-mode: multiply;
+  //background-blend-mode: multiply;
+  @include menu_shadow($conf_menu_shadow);
+  background-color: transparent;
+  min-height: 72px;
+  margin-top: 40px;
+  border: none;
+  .navbar-nav {
+    > li {
+      > a { 
+        font-family: 'Gotham-Bold';
+        line-height: 50px;
+        padding: 11px 5px;
+        font-size: 16px;
+        text-transform: uppercase;
+        color: $txt_menu_color;
+        &:hover { 
+          color: $txt_menu_color;
+        }
+      }
+      &:hover { 
+         background-color: $bg_hover_menu_color;
+      }
+    } 
+  }
+  .navbar-toggle {
+    margin-top: 20px;
+    border: 1px solid $txt_menu_color;
+    background-color: $bg_menu_color;
+    .icon-bar {
+      background-color: $txt_menu_color;
+    }
+  }
+}
+
+.navbar-header { 
+  min-height: 72px;
+}
+
+.navbar-brand { 
+  height: 110px; 
+  margin-top: -45px;
+}
+
+.header_content {
+  padding: 160px 20px 20px 20px;
+  background-color: $bg_header_content;
+}
+
+.box_content {
+  padding: 80px 50px;
+  background-size: cover;
+  p {
+    font-size: 1em;
+    line-height: 1.25em;
+    margin: 1.5em 0;
+    text-align: justify;
+  }
+  &.bg_fundamentacao { background-image: url(../img/layout/imgBgContent_Fundamentacao.jpg); }
+  &.bg_objetivos { background-image: url(../img/layout/imgBgContent_Objetivos.jpg); }
+  &.bg_etapas { background-color: #007ab6; }
+  &.bg_informacoes { background-image: url(../img/layout/imgBgContent_Informacoes.jpg); }
+  &.bg_contatos { background-image: url(../img/layout/imgBgContent_Contatos.jpg); }
+}
+
+
+
+.box_panel{
+  padding: 40px;
+  color: #ffffff;
+  @include box_radius($raio_box_panel);
+  ol {
+    li {
+      font-family: 'Raleway', sans-serif;
+      text-align: justify;
+      font-size: 16px;
+      color: #ffffff;
+      padding-left: 77px;
+      min-height: 75px;
+      margin: 50px 0; 
+      background-repeat: no-repeat;
+      &.b01 {
+        background-image: url(../img/layout/imgOL_01.png);
+      }
+      &.b02 {
+        background-image: url(../img/layout/imgOL_02.png);
+      }
+      &.b03 {
+        background-image: url(../img/layout/imgOL_03.png);
+      }
+      &.b04 {
+        background-image: url(../img/layout/imgOL_04.png);
+      }
+      &.b05 {
+        background-image: url(../img/layout/imgOL_05.png);
+      }
+      &.b06 {
+        background-image: url(../img/layout/imgOL_06.png);
+      }
+    }
+  }
+  ul {
+    margin: 30px 0;
+    li {
+      font-family: 'Raleway', sans-serif;
+      font-size: 16px;
+      color: #000000;
+      margin: 20px 0; 
+      text-align: justify;
+      strong {
+        font-family: 'Indie Flower', cursive;
+        font-size: 16px;
+        width: 30px;
+        height: 30px;
+        border-radius: 15px;
+        margin-right: 5px;
+        float: left;
+        display: block; padding:5px;
+        font-weight: bold;
+        background-color: #000000;
+        color: #ffdf00;
+        padding: 8px 11px;
+      }
+    }
+  }
+}
+
+.bg_azul_trans {
+  background-image: url(../img/layout/imgBgMenu.png);
+}
+
+.bg_amarelo_solid {
+  background-color: $bg_amarelo_solid;
+}
+
+.bg_azul_solid {
+  background-color: $bg_azul_solid;
+}
+
+
+
+.hi-icon-wrap {
+  text-align: center;
+  margin: 0 auto;
+  padding: 2em 0 3em;
+}
+
+.hi-icon {
+  display: inline-block;
+  font-size: 0px;
+  cursor: pointer;
+  margin: 15px 30px;
+  padding: 48px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  background-color: $bg_botao_etapa;
+  &:after {
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    content: '';
+    -webkit-box-sizing: content-box; 
+    -moz-box-sizing: content-box; 
+    box-sizing: content-box;
+  }
+  &:before {
+    font-family: 'ecoicon';
+    speak: none;
+    font-size: 48px;
+    line-height: 90px;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    display: block;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Effect Icons */
+.hi-icon-effect {
+  .hi-icon {
+    -webkit-transition: box-shadow 0.2s;
+    -moz-transition: box-shadow 0.2s;
+    transition: box-shadow 0.2s;
+    &:after {
+      top: 0;
+      left: 0;
+      padding: 0;
+      box-shadow: 0 0 0 3px #fff;
+      -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+      -moz-transition: -moz-transform 0.2s, opacity 0.2s;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+  }
+}
+
+.hi-icon-effect-a {
+  .hi-icon {
+    &:hover {
+      box-shadow: 0 0 0 10px rgba(255,255,255,1);
+      color: #fff;
+      &:after {
+        -webkit-transform: scale(0.85);
+        -moz-transform: scale(0.85);
+        -ms-transform: scale(0.85);
+        transform: scale(0.85);
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+
+#box_etapa_content{   
+  overflow:hidden;
+  .contentbox-wrapper {      
+    position:relative; 
+    left:0; 
+    width:10000%; 
+    height: 100%;
+    .contentbox{
+      width:1%; 
+      height: 100%;
+      float:left; 
+      padding:10px;
+      overflow: auto;   
+    }
+  }
+}
+
+.bt_menu_info { 
+  width: 300px;
+  height: 77px;
+  margin: 8px 20px;
+  display: block;
+  outline: none;
+  &:hover { background-position: bottom; }
+  &.apoio { background-image: url(../img/botoes/imgBtInfo_Apoio.png); }
+  &.custo { background-image: url(../img/botoes/imgBtInfo_Custo.png); }
+  &.local { background-image: url(../img/botoes/imgBtInfo_Local.png); }
+  &.patrocinio { background-image: url(../img/botoes/imgBtInfo_Patrocinio.png); }
+  &.executivos { background-image: url(../img/botoes/imgBtInfo_Executivos.png); }
+  &.vantagens { background-image: url(../img/botoes/imgBtInfo_Vantagens.png); }
+}
+
+.blend {  
+  -webkit-blend-mode: multiply; blend-mode: multiply;
+}
+
+.footer { 
+  height: 60px;
+  margin-top: 30px;
+  background-color: #cacaca;
+  padding: 20px 0;
+}

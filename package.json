@@ -1,0 +1,23 @@
+{
+  "name": "Teste Descomplica",
+  "version": "1.0",
+  "description": "Teste da Empresa Descomplica - Site Teleport",
+  "homepage": "http://www.eduardochaves.com.br/teleport/",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/educostachaves/teleport/"
+  },
+  "engines": {
+    "node": "0.10.30",
+    "npm": "1.4.21"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-cli": "0.1.13",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-jshint": "~0.1.1",
+    "grunt-contrib-sass": "*",
+    "grunt-contrib-uglify": "^0.6.0",
+    "grunt-contrib-watch": "*"
+  }
+}
