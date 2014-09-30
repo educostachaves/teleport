@@ -1,0 +1,3 @@
+# Descartar pastas
+.sass-cache/
+node_modules/
