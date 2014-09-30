@@ -10,7 +10,7 @@ module.exports = function(grunt) {
         meta: {
             basePath: './',
             srcPath: './src/sass/',
-            deployPath: './dist/css/'
+            deployPath: './dev/css/'
         },
  
         banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
@@ -19,9 +19,10 @@ module.exports = function(grunt) {
  
         // SASS
         sass: {
-            dist: {
+            dev: {
             	options: { 
-			        style: 'compact'
+			        style: 'compressed',
+                    compass: true
 			    },
                 files: {
                     '<%= meta.deployPath %>main.css': '<%= meta.srcPath %>main.scss'
@@ -31,9 +32,21 @@ module.exports = function(grunt) {
 
         //Uglify
         uglify: {
-            'build/home.js': 'src/home.js',
-            'build/main.js': 'src/main.js'  
-         },
+            'dev/js/home.js': 'src/js/home.js',
+            'dev/js/main.js': 'src/js/main.js'  
+        },
+
+        //CONCAT
+        concat: {
+            options: {
+                separator: ';'
+            },
+            dev: {
+                src: ['src/js/*.js'],
+                dest: 'dev/js/app.js'
+            }
+        },
+
 
         //watch
         watch: {
@@ -54,6 +67,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
  
     // Default task.
-    grunt.registerTask('default', [ 'sass' , 'uglify' ]);
+    grunt.registerTask('default', [ 'sass' , 'uglify' , 'concat' ]);
  
 };
