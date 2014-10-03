@@ -1,15 +1,9 @@
 
-@mixin menu_shadow($conf) {
-  -webkit-box-shadow: $conf;
-     -moz-box-shadow: $conf;
-      -ms-box-shadow: $conf;
-          box-shadow: $conf;
-}
+// Borda Arredondada Menu
 
-@mixin box_radius($conf) {
-	border-radius:$conf;
-}
-
-@mixin blend-mode($modo) {
-	blend-mode: $modo;
+@mixin bd-radius-menu($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
 }

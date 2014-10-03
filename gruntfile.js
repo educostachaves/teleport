@@ -1,12 +1,9 @@
 module.exports = function(grunt) {
  
-    // Project configuration.
     grunt.initConfig({
  
-        //Read the package.json (optional)
         pkg: grunt.file.readJSON('package.json'),
  
-        // Metadata.
         meta: {
             basePath: './',
             srcPath: './src/sass/',
@@ -21,19 +18,12 @@ module.exports = function(grunt) {
         sass: {
             dev: {
             	options: { 
-			        style: 'compressed',
-                    compass: true
+			        style: 'compact'
 			    },
                 files: {
                     '<%= meta.deployPath %>main.css': '<%= meta.srcPath %>main.scss'
                 }
             }
-        },
-
-        //Uglify
-        uglify: {
-            'dev/js/home.js': 'src/js/home.js',
-            'dev/js/main.js': 'src/js/main.js'  
         },
 
         //CONCAT
@@ -42,11 +32,15 @@ module.exports = function(grunt) {
                 separator: ';'
             },
             dev: {
-                src: ['src/js/*.js'],
-                dest: 'dev/js/app.js'
+                src: ['src/js/assets/*.js'],
+                dest: 'src/js/main.js'
             }
         },
 
+        //Uglify
+        uglify: {
+            'dev/js/main.js': 'src/js/main.js' 
+        },
 
         //watch
         watch: {
@@ -60,13 +54,13 @@ module.exports = function(grunt) {
  
     });
  
-    // These plugins provide necessary tasks.
+    // Plugins.
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-concat');
  
-    // Default task.
-    grunt.registerTask('default', [ 'sass' , 'uglify' , 'concat' ]);
+    // Tasks.
+    grunt.registerTask('default', [ 'sass' , 'concat' , 'uglify' ]);
  
 };
